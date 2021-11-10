@@ -16,7 +16,7 @@ window.onload = function () {
     let $imagen = document.getElementById("imagen");
     let $botonPlay = document.getElementById("play");
     let $botonStop = document.getElementById("stop");
-    let $zoom = document.getElementById("zooom");
+    var container = document.querySelector(".soccer");
 
 
 
@@ -38,6 +38,15 @@ window.onload = function () {
         renderizarImagen();
 
     }
+
+    container.addEventListener('mousemove', function (event) {
+        var x = event.clientX;
+        var y = event.clientY;
+        var ball = document.querySelector(".ball");
+        ball.style.position = "absolute";
+        ball.style.left = `${x}px`;
+        ball.style.top = `${y}px`;
+      })
 
     /**
      * Funcion que cambia la foto en la anterior posicion
